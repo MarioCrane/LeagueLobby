@@ -1,0 +1,239 @@
+Qt VS Tools: QML debug: Debugging project 'QQVerify'...
+Qt VS Tools: QML debug: DISABLED: QML debugging disabled in Qt project settings
+“QQVerify.exe”(Win32): 已加载“D:\qt_workspace\LeagueOfLegends\QQVerify\x64\Debug\QQVerify.exe”。已加载符号。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ntdll.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\kernel32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\KernelBase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\shell32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\msvcrt.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\cfgmgr32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ucrtbase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\SHCore.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\rpcrt4.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\combase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Cored.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Widgetsd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\bcryptprimitives.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\windows.storage.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\gdi32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\advapi32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\gdi32full.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5WebEngineWidgetsd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\sechost.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\msvcp_win.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\shlwapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\user32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\win32u.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\kernel.appcore.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\profapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ole32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\powrprof.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\fltLib.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ucrtbased.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\uxtheme.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dwmapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Guid.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\vcruntime140d.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5PrintSupportd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Quickd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\comdlg32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Networkd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\crypt32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\msasn1.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ws2_32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5QuickWidgetsd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\msvcp140d.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\d3d11.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dxgi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winspool.drv”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5WebEngineCored.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\oleaut32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5QmlModelsd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Qmld.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.17133.1_none_474734914293f853\comctl32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dnsapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\IPHLPAPI.DLL”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\nsi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\propsys.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\bcrypt.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5WebChanneld.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dbghelp.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\Qt5Positioningd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\usp10.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\version.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winmm.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\userenv.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dhcpcsvc.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ncrypt.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\secur32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\urlmon.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winhttp.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DWrite.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\wtsapi32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\d3d9.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dxva2.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\hid.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\fontsub.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winmmbase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winmmbase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winmmbase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\winmmbase.dll”
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\winmmbase.dll”
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ntasn1.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\iertutil.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\cryptbase.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\sspicli.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mpr.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\netapi32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\srvcli.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\netutils.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\imm32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Program Files\MacType\MacType64.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Program Files\MacType\EasyHK64.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Program Files\MacType\MacType64.Core.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\d2d1.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\plugins\platforms\qwindowsd.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Program Files\ASUSTeKcomputer.Inc\Sonic Suite 3\Foundation\x64\SS3DevProps.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\clbcatq.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\MMDevAPI.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\devobj.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\AudioSes.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\WinTypes.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\avrt.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvldumdx.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\cryptnet.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\wintrust.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\imagehlp.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\cryptsp.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\rsaenh.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvd3dumx.dll”。无法查找或打开 PDB 文件。
+线程 0x2e84 已退出，返回值为 0 (0x0)。
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvd3dumx.dll”
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvldumdx.dll”
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\opengl32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\glu32.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\msctf.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvoglv64.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\setupapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\ntmarta.dll”。无法查找或打开 PDB 文件。
+线程 0x210c 已退出，返回值为 0 (0x0)。
+线程 0x3a28 已退出，返回值为 0 (0x0)。
+线程 0x2e0 已退出，返回值为 0 (0x0)。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\nvspcap64.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winsta.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\plugins\styles\qwindowsvistastyled.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\nlaapi.dll”。无法查找或打开 PDB 文件。
+线程 0x2bf0 已退出，返回值为 0 (0x0)。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dhcpcsvc6.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mscms.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\coloradapterclient.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mf.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mfplat.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\RTWorkQ.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mfreadwrite.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\MFCaptureEngine.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Program Files\NVIDIA Corporation\NVSMI\nvml.dll”。模块已生成，不包含符号。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\psapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\CompPkgSup.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\Windows.StateRepositoryPS.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\Windows.Media.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mfh264enc.dll”。无法查找或打开 PDB 文件。
+线程 0x33f0 已退出，返回值为 0 (0x0)。
+线程 0x37c0 已退出，返回值为 0 (0x0)。
+线程 0x5a4 已退出，返回值为 0 (0x0)。
+线程 0x316c 已退出，返回值为 0 (0x0)。
+线程 0xf84 已退出，返回值为 0 (0x0)。
+线程 0x1e94 已退出，返回值为 0 (0x0)。
+线程 0x3034 已退出，返回值为 0 (0x0)。
+线程 0xc30 已退出，返回值为 0 (0x0)。
+线程 0x3be0 已退出，返回值为 0 (0x0)。
+线程 0x2f1c 已退出，返回值为 0 (0x0)。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\KBDUS.DLL”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\KBDUS.DLL”
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvldumdx.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvd3dumx.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvldumdx.dll”
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_e0a5a1b06de180e3\nvd3dumx.dll”
+线程 0x34a8 已退出，返回值为 0 (0x0)。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\DataExchange.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\dcomp.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\twinapi.appcore.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\rmclient.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“D:\Qt\Qt5.14.2\5.14.2\msvc2017_64\bin\QtWebEngineProcessd.exe”
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\TextInputFramework.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\CoreUIComponents.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\CoreMessaging.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\mswsock.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\rasadhlp.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\FWPUCLNT.DLL”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\gpapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已卸载“C:\Windows\System32\gpapi.dll”
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\gpapi.dll”。无法查找或打开 PDB 文件。
+“QQVerify.exe”(Win32): 已加载“C:\Windows\System32\winnsi.dll”。无法查找或打开 PDB 文件。
+[10776:15264:0526/215632.310:INFO:CONSOLE(4)] "寮€濮嬫媺鍙栦簩缁寸爜: Tue May 26 2020 21:56:32 GMT+0800 (涓浗鏍囧噯鏃堕棿)", source: https://qq-web.cdn-go.cn/any.ptlogin2.qq.com/568bc044//ptlogin/ver/20032614/js/c_login_2.js?max_age=604800&ptui_identifier=000D0379CEE3B36723774D61657B2A5FB2E7E853A72570E51D32502F (4)
+[10776:15264:0526/215632.311:INFO:CONSOLE(4)] "璺濈涓婃鎷夊彇鏃堕棿  1590501392297 澶煭", source: https://qq-web.cdn-go.cn/any.ptlogin2.qq.com/568bc044//ptlogin/ver/20032614/js/c_login_2.js?max_age=604800&ptui_identifier=000D0379CEE3B36723774D61657B2A5FB2E7E853A72570E51D32502F (4)
+[10776:15264:0526/215632.479:INFO:CONSOLE(4)] "璺濈涓婃鎷夊彇鏃堕棿  1590501392297 澶煭", source: https://qq-web.cdn-go.cn/any.ptlogin2.qq.com/568bc044//ptlogin/ver/20032614/js/c_login_2.js?max_age=604800&ptui_identifier=000D0379CEE3B36723774D61657B2A5FB2E7E853A72570E51D32502F (4)
+Page
+"首页\n群订阅号\n开放能力\n群管理\n兴趣部落\n加群组件\n帮助\n\nMario\n [退出]\n\n|\n\n反馈\n\n群验证(879891544) [切换QQ群]\n群成员人数: 2/200 添加成员\n更多筛选\n\t\t成员\t群昵称\tQQ号\t性别\t\nQ龄\n\t\n入群时间\n\t\n最后发言\n\t\n\t1\t\n阿巴阿巴阿巴阿巴\n\t\n\t2653413930\t未知\t8年\t2020/05/24\t2020/05/24\t\n\t2\t\nMario\n\t\n\t156456715\t未知\t4年\t2020/05/24\t2020/05/24\t\n\n友情链接：QQ官方网站 | 腾讯开放平台 | 在线教育介绍 | QQ商家 | QQ会员 | 腾讯文档\n\nCopyright © 1998-2015 Tencent. All Rights Reserved.\n\n腾讯公司 版权所有"
+-1
+"Ⱥ��֤(879891544)"
+线程 0x31e8 已退出，返回值为 0 (0x0)。
+线程 0x794 已退出，返回值为 0 (0x0)。
+线程 0x3ba0 已退出，返回值为 0 (0x0)。
+线程 0x126c 已退出，返回值为 0 (0x0)。
+线程 0x3798 已退出，返回值为 0 (0x0)。
+线程 0x383c 已退出，返回值为 0 (0x0)。
+线程 0x2008 已退出，返回值为 0 (0x0)。
+线程 0x37d8 已退出，返回值为 0 (0x0)。
+线程 0x3100 已退出，返回值为 0 (0x0)。
+线程 0x3a10 已退出，返回值为 0 (0x0)。
+线程 0x307c 已退出，返回值为 0 (0x0)。
+线程 0x3560 已退出，返回值为 0 (0x0)。
+线程 0x364c 已退出，返回值为 0 (0x0)。
+线程 0x3548 已退出，返回值为 0 (0x0)。
+线程 0x2c3c 已退出，返回值为 0 (0x0)。
+线程 0x2ed0 已退出，返回值为 0 (0x0)。
+线程 0x3a20 已退出，返回值为 0 (0x0)。
+线程 0x3680 已退出，返回值为 0 (0x0)。
+线程 0x3bd0 已退出，返回值为 0 (0x0)。
+线程 0x3bc8 已退出，返回值为 0 (0x0)。
+线程 0x28ac 已退出，返回值为 0 (0x0)。
+线程 0x32d4 已退出，返回值为 0 (0x0)。
+线程 0x25a8 已退出，返回值为 0 (0x0)。
+线程 0x3c0 已退出，返回值为 0 (0x0)。
+线程 0x32c0 已退出，返回值为 0 (0x0)。
+线程 0x2b14 已退出，返回值为 0 (0x0)。
+线程 0xb3c 已退出，返回值为 0 (0x0)。
+线程 0x3238 已退出，返回值为 0 (0x0)。
+线程 0x15d0 已退出，返回值为 0 (0x0)。
+线程 0x3aa8 已退出，返回值为 0 (0x0)。
+线程 0x30f8 已退出，返回值为 0 (0x0)。
+线程 0x2b60 已退出，返回值为 0 (0x0)。
+线程 0x3740 已退出，返回值为 0 (0x0)。
+线程 0x2cec 已退出，返回值为 0 (0x0)。
+线程 0x3bb4 已退出，返回值为 0 (0x0)。
+线程 0x2708 已退出，返回值为 0 (0x0)。
+线程 0x2718 已退出，返回值为 0 (0x0)。
+线程 0x2e30 已退出，返回值为 0 (0x0)。
+线程 0x3ac4 已退出，返回值为 0 (0x0)。
+线程 0x33ec 已退出，返回值为 0 (0x0)。
+程序“[10776] QQVerify.exe”已退出，返回值为 0 (0x0)。
