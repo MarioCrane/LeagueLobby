@@ -3,7 +3,10 @@
 #include "version.h"
 #include <QFile>
 #include <QMessageBox>
+
+#ifdef QQ_GROUP_CHECK
 #include <qqgroupcheck.h>
+#endif
 
 #if 0
 void webResultCallback(const QString &string)
@@ -49,10 +52,13 @@ int main(int argc, char *argv[])
 	MainWindow w;
 	w.hide();
 
+#ifdef QQ_GROUP_CHECK
 	/* QQ群验证 */
     QQGroupCheck groupCheck;
 	QObject::connect(&groupCheck, &QQGroupCheck::checkSuccess, &w, &QWidget::show);
 	groupCheck.show();
-
+#else
+    w.show();
+#endif
     return a.exec();
 }

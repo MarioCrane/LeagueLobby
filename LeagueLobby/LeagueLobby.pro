@@ -1,4 +1,4 @@
-QT       += core gui network webenginewidgets
+QT       += core gui network #webenginewidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,7 +21,7 @@ SOURCES += \
     lockfilereader.cpp \
     main.cpp \
     mainwindow.cpp \
-    qqgroupcheck.cpp \
+    #qqgroupcheck.cpp \
     queuesinfo.cpp
 
 HEADERS += \
@@ -30,7 +30,7 @@ HEADERS += \
     lockfilereader.h \
     mainwindow.h \
     processinfo.h \
-    qqgroupcheck.h \
+    #qqgroupcheck.h \
     queues.h \
     queuesinfo.h \
     version.h

@@ -72,27 +72,51 @@ void MainWindow::onSummonerInfo(const SummonerInfo &info)
 
 void MainWindow::showAboutDialog()
 {
+#if 0
     QMessageBox::about(nullptr, "声明",
                        QString("<p>"
-                       "<span style=\"font-size:26px;color:gray\">League Lobby</span>"
-                       "<span style=\"color:gray\"> %1</span><br/><br/>"
-                       "<span style=\"font-size:17px\">此软件为英雄联盟自定义房间工具.</span><br/>"
-                       "<span style=\"font-size:17px\">此软件的开发完全遵循Riot开发者协议.</span><br/>"
-                       "<span style=\"font-size:17px\">所实现的效果皆为调用Riot League of Legends开放API.</span><br/>"
-                       "<span style=\"font-size:17px\">此软件</span><span style=\"font-size:20px;color:red\">不对游戏进行任何修改(内存、文件等)</span>.<br/>"
-                       "<span style=\"font-size:17px\">此软件</span><span style=\"font-size:20px;color:red\">仅供学习，严禁出售！</span><br/>"
-                       "<span style=\"font-size:17px\">如有任何问题请联系作者.</span><br/>"
-                       "<span style=\"font-size:17px\">Bilibili UID:14671179 或 QQ: 156456715.</span><br/>"
-                       "<span style=\"font-size:17px\">交流群 %2</span><br/>"
-                       "<span style=\"font-size:17px\"> 测试人员: 蓝色奇诺比奥.</span><br/>"
-                       "<span style=\"font-size:17px\"> 作者: Mario.</span>"
-                       "</p>").arg(LeagueLobbyVersion).arg(QQGroupId));
+                               "<center style=\"font-size:26px;color:gray\">League Lobby</span>"
+                               "<span style=\"color:#ffff00\"> %1</span><br/><br/>"
+                               "<span style=\"font-size:17px\">此软件为英雄联盟自定义房间工具.</span><br/>"
+                               "<span style=\"font-size:17px\">此软件的开发完全遵循Riot开发者协议.</span><br/>"
+                               "<span style=\"font-size:17px\">所实现的效果皆为调用Riot League of Legends开放API.</span><br/>"
+                               "<span style=\"font-size:17px\">此软件</span><span style=\"font-size:20px;color:red\">不对游戏进行任何修改(内存、文件等)</span>.<br/>"
+                               "<span style=\"font-size:17px\">此软件</span><span style=\"font-size:20px;color:red\">仅供学习，严禁出售！</span><br/>"
+                               "<span style=\"font-size:17px\">如有任何问题请联系作者.</span><br/>"
+                               "<span style=\"font-size:17px\">Bilibili UID:14671179.</span><br/>"
+                               "<span style=\"font-size:17px\">LeagueLobby软件交流群 %2 <a href=\"https://shang.qq.com/wpa/qunwpa?idkey=cf65f617e3c15b5f6f075e76fe3c8ba62e2ab92ba940697f0810e8063f0031a9\">点击加入</a></span><br/>"
+                               "<span style=\"font-size:17px\"> 测试人员: 蓝色奇诺比奥.</span><br/>"
+                               "<span style=\"font-size:17px\"> 作者: Mario.</span>"
+                               "</p>").arg(LeagueLobbyVersion).arg(QQGroupId));
+#endif
+    QMessageBox::about(nullptr, "声明",
+        QString("<p>"
+            "<span style=\"font-size:26px;\">League Lobby</span>"
+            "<span style=\"font-size:17px;\"> 英雄联盟自定义房间工具</span>"
+            "<span > %1</span><br/><br/>"
+            "<center style=\"font-size:17px\">此软件的开发完全遵循Riot开发者协议.</center>"
+            "<center style=\"font-size:17px\">不修改游戏的任何文件或内存.</center>"
+            "<center style=\"font-size:17px\">所有效果皆为调用Riot League of Legends开放API实现.</center><br/>"
+            "<b style=\"font-size:18px;color:#ffff00\">此软件仅供学习交流使用，严禁用于任何商业用途！</b><br/><br/>"
+            "<span style=\"font-size:17px\">如有任何问题请联系作者 Mario.</span><br/>"
+            "<span style=\"font-size:17px\">哔哩哔哩 UID:14671179 <a href=\"https://space.bilibili.com/14671179\">点击加入</a>.</span><br/>"
+            "<span style=\"font-size:17px\">交流QQ群 %2 <a href=\"https://shang.qq.com/wpa/qunwpa?idkey=cf65f617e3c15b5f6f075e76fe3c8ba62e2ab92ba940697f0810e8063f0031a9\">点击加入</a></span><br/>"
+            "<span style=\"font-size:17px\">感谢测试人员: 蓝色奇诺比奥(小蓝).</span><br/>"
+            "</p>").arg(LeagueLobbyVersion).arg(QQGroupId));
 }
-
 
 void MainWindow::on_btn_getSummonerInfo_clicked()
 {
-    QString path = ui->cbox_paths->currentText();
+    QString path;
+    if (ui->rbtn_getPath_manual->isChecked()) {
+        path = ui->lineEdit_path->text();
+    }
+
+    if (ui->rbtn_getPath_auto->isChecked()) {
+        path = ui->cbox_paths->currentText();
+    }
+
+
     if (path.isEmpty()) {
         QMessageBox::warning(this, "警告!", "请先开启游戏再获取召唤师信息！");
         return;
@@ -110,7 +134,7 @@ void MainWindow::on_btn_createFromJson_clicked()
         return;
     }
 
-	m_lobbyManager->createLobbyFromJson(ui->textEdit_json->toPlainText());
+    m_lobbyManager->createLobbyFromJson(ui->textEdit_json->toPlainText());
 }
 
 void MainWindow::on_btn_createFromQueueId_clicked()
@@ -144,7 +168,7 @@ void MainWindow::on_btn_create5V5Tutorial_clicked()
     qsrand(time(NULL));
     int n = qrand() % 65535;
     QString name = QString("Mario LeagueLobby 5V5 PRACTICETOOL-%1").arg(n);
-    m_lobbyManager->create5V5Tutorial(name);
+    m_lobbyManager->create5V5Practice(name);
 }
 
 void MainWindow::initSummonerInfo()

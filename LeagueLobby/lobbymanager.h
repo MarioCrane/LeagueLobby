@@ -59,7 +59,7 @@ public:
      * @param lobbyName 房间名
      * @param teamSize 团队内人数，默认为5
      */
-    void create5V5Tutorial(const QString &lobbyName, const quint8 &teamSize = 5);
+    void create5V5Practice(const QString &lobbyName, const quint8 &teamSize = 5);
 
 public slots:
     void onReplyFinished(QNetworkReply *reply) override;

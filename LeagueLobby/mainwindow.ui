@@ -7,22 +7,29 @@
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>630</height>
+    <height>750</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout_5">
+   <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <layout class="QHBoxLayout" name="horizontalLayout">
-        <item>
-         <widget class="QComboBox" name="cbox_paths"/>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="0" column="0">
+         <widget class="QRadioButton" name="rbtn_getPath_auto">
+          <property name="text">
+           <string>自动获取路径</string>
+          </property>
+          <property name="checked">
+           <bool>true</bool>
+          </property>
+         </widget>
         </item>
-        <item>
+        <item row="0" column="3">
          <widget class="QPushButton" name="btn_refresh">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -34,6 +41,31 @@
            <string/>
           </property>
          </widget>
+        </item>
+        <item row="0" column="1" colspan="2">
+         <widget class="QComboBox" name="cbox_paths">
+          <item>
+           <property name="text">
+            <string>请通过右侧的按钮自动获取游戏路径或手动填入LeagueClient.exe的路径</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QRadioButton" name="rbtn_getPath_manual">
+          <property name="maximumSize">
+           <size>
+            <width>100</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>手动填写路径</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1" colspan="3">
+         <widget class="QLineEdit" name="lineEdit_path"/>
         </item>
        </layout>
       </item>
@@ -119,7 +151,27 @@
           </layout>
          </item>
          <item>
+          <widget class="QCheckBox" name="cbox_createFromJson">
+           <property name="text">
+            <string>根据Json创建房间</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
           <widget class="QPlainTextEdit" name="textEdit_json"/>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="cbox_result">
+           <property name="text">
+            <string>返回结果，包含了房间的相关信息</string>
+           </property>
+           <property name="checkable">
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPlainTextEdit" name="textEdit_result">
@@ -218,7 +270,7 @@
              <item row="1" column="0" colspan="6">
               <widget class="QPushButton" name="btn_createFromQueueId">
                <property name="text">
-                <string>根据ID创建</string>
+                <string>根据ID创建 (右侧整理的部分可能有出入)</string>
                </property>
               </widget>
              </item>
@@ -268,5 +320,38 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>cbox_createFromJson</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>textEdit_json</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>85</x>
+     <y>178</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>113</x>
+     <y>287</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cbox_result</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>textEdit_result</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>424</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>145</x>
+     <y>493</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

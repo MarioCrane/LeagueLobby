@@ -95,7 +95,7 @@ static bool GetProcessFullPath(const DWORD &dwPID, wchar_t *pszFullPath)
 static QStringList GetProcessFullPaths(const QString &name)
 {
     QStringList list;
-    setlocale(LC_ALL, "chs");    //不设置解析中文字符时可能会出问题
+    //setlocale(LC_ALL, "chs");    //不设置解析中文字符时可能会出问题
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);    //得到系统所有线程快照
     if (INVALID_HANDLE_VALUE == hSnapshot)
     {

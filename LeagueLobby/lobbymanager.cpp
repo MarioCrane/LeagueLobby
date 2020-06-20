@@ -30,7 +30,7 @@ void LobbyManager::createLobbyFromQueueId(const quint16 &id)
     postRequest(m_url, QString("{\"queueId\":%1}").arg(id));
 }
 
-void LobbyManager::create5V5Tutorial(const QString &lobbyName, const quint8 &teamSize)
+void LobbyManager::create5V5Practice(const QString &lobbyName, const quint8 &teamSize)
 {
     /***********************************
      * {
