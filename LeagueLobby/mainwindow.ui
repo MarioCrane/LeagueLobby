@@ -6,352 +6,90 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>850</width>
-    <height>750</height>
+    <width>290</width>
+    <height>155</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QHBoxLayout" name="horizontalLayout">
-    <item>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <layout class="QGridLayout" name="gridLayout_2">
-        <item row="0" column="0">
-         <widget class="QRadioButton" name="rbtn_getPath_auto">
-          <property name="text">
-           <string>自动获取路径</string>
-          </property>
-          <property name="checked">
-           <bool>true</bool>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="3">
-         <widget class="QPushButton" name="btn_refresh">
-          <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1" colspan="2">
-         <widget class="QComboBox" name="cbox_paths">
-          <item>
-           <property name="text">
-            <string>请通过右侧的按钮自动获取游戏路径或手动填入LeagueClient.exe的路径</string>
-           </property>
-          </item>
-         </widget>
-        </item>
-        <item row="1" column="0">
-         <widget class="QRadioButton" name="rbtn_getPath_manual">
-          <property name="maximumSize">
-           <size>
-            <width>100</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="text">
-           <string>手动填写路径</string>
-          </property>
-         </widget>
-        </item>
-        <item row="1" column="1" colspan="3">
-         <widget class="QLineEdit" name="lineEdit_path"/>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="gbox">
-        <property name="title">
-         <string>基础功能</string>
-        </property>
-        <layout class="QVBoxLayout" name="verticalLayout">
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_3">
-           <item>
-            <widget class="QPushButton" name="btn_getSummonerInfo">
-             <property name="text">
-              <string>获取召唤师信息</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lbl_title_name">
-             <property name="text">
-              <string>名字:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lbl_name">
-             <property name="text">
-              <string>未知</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lbl_title_level">
-             <property name="text">
-              <string>等级:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lbl_level">
-             <property name="text">
-              <string>0</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lbl_title_xp">
-             <property name="text">
-              <string>经验:</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="lbl_xp">
-             <property name="text">
-              <string>0 / 0</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="cbox_createFromJson">
-           <property name="text">
-            <string>根据Json创建房间</string>
-           </property>
-           <property name="checkable">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPlainTextEdit" name="textEdit_json"/>
-         </item>
-         <item>
-          <widget class="QCheckBox" name="cbox_result">
-           <property name="text">
-            <string>返回结果，包含了房间的相关信息</string>
-           </property>
-           <property name="checkable">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QPlainTextEdit" name="textEdit_result">
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout_2">
-           <item>
-            <widget class="QPushButton" name="btn_createFromJson">
-             <property name="text">
-              <string>根据Json创建</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btn_create5V5Tutorial">
-             <property name="text">
-              <string>创建5V5训练模式</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="horizontalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="1" colspan="2">
-              <widget class="QSpinBox" name="sbox_queueId">
-               <property name="maximum">
-                <number>10000</number>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="3">
-              <widget class="QComboBox" name="cbox_increment">
-               <item>
-                <property name="text">
-                 <string>不递增</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>+1</string>
-                </property>
-               </item>
-               <item>
-                <property name="text">
-                 <string>+10</string>
-                </property>
-               </item>
-              </widget>
-             </item>
-             <item row="0" column="5">
-              <widget class="QLabel" name="lbl_currentId">
-               <property name="minimumSize">
-                <size>
-                 <width>40</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <property name="text">
-                <string>0</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="4">
-              <widget class="QLabel" name="lbl_title_currentId">
-               <property name="text">
-                <string>当前ID</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="lbl_title_queueId">
-               <property name="text">
-                <string>QueueId</string>
-               </property>
-              </widget>
-             </item>
-             <item row="1" column="0" colspan="6">
-              <widget class="QPushButton" name="btn_createFromQueueId">
-               <property name="text">
-                <string>根据ID创建 (右侧整理的部分可能有出入)</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </widget>
-      </item>
-     </layout>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="4">
+     <widget class="QPushButton" name="btn_help_practicetool">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
-    <item>
-     <widget class="QWidget" name="widget_queues" native="true"/>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="edit_queueId"/>
+    </item>
+    <item row="0" column="0" colspan="3">
+     <widget class="QLineEdit" name="edit_path"/>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_queueId">
+      <property name="text">
+       <string>queueId</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0" colspan="4">
+     <widget class="QPushButton" name="btn_create_practicetool">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2" colspan="2">
+     <widget class="QPushButton" name="btn_create_queueId">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="btn_refresh">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="btn_help_queueId">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="btn_select">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_source">
+      <property name="text">
+       <string>Source</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1" colspan="4">
+     <widget class="QLabel" name="label_source_link">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>850</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>关于</string>
-    </property>
-    <addaction name="action_setUID"/>
-    <addaction name="separator"/>
-    <addaction name="action_about"/>
-   </widget>
-   <addaction name="menu"/>
-  </widget>
-  <widget class="QStatusBar" name="statusbar"/>
-  <action name="action_setUID">
-   <property name="text">
-    <string>输入UID</string>
-   </property>
-  </action>
-  <action name="action_about">
-   <property name="text">
-    <string>关于</string>
-   </property>
-  </action>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>cbox_createFromJson</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>textEdit_json</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>85</x>
-     <y>178</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>113</x>
-     <y>287</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>cbox_result</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>textEdit_result</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>143</x>
-     <y>424</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>145</x>
-     <y>493</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

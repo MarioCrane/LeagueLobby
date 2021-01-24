@@ -1,278 +1,182 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "version.h"
+#include "stylesheet.h"
+#include "gameinfo.h"
+
+#include <QPointer>
+#include <QGraphicsDropShadowEffect>
+#include <QRegExpValidator>
 #include <QMessageBox>
-#include <QDebug>
-#include <ctime>
+#include <QFileDialog>
+#include <QDesktopServices>
+
+const QString ProcessName = "LeagueClient.exe";
+const QString SummonerUrl = "https://riot:%1@127.0.0.1:%2/lol-summoner/v1/current-summoner";
+const QString LobbyUrl = "https://riot:%1@127.0.0.1:%2/lol-lobby/v2/lobby";
+
+const QString JsonPracticetool = R"(
+{
+    "customGameLobby": {
+        "configuration": {
+            "gameMode": "PRACTICETOOL",
+            "gameMutator": "",
+            "gameServerRegion": "",
+            "mapId": 11,
+            "mutators": {
+                "id": 1
+            },
+            "spectatorPolicy": "AllAllowed",
+            "teamSize": 5
+       },
+       "lobbyName": "LeagueLobby 5V5 PRACTICETOOL-%1",
+       "lobbyPassword": null
+    },
+    "isCustom": true
+}
+)";
+const QString JsonQueueId = R"({"queueId": %1})";
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , m_helpWidget(new HelpWidget)
+    , m_httpsManager(new HttpsManager)
 {
     ui->setupUi(this);
 
-    /* UI */
-    this->setWindowTitle("League Lobby");
-    ui->statusbar->setVisible(false);
-    showQueuesWidget();
-
-    showAboutDialog();
-
-    connect(ui->action_about, &QAction::triggered, this, &MainWindow::showAboutDialog);
-
-    /*connect(ui->comboBox, QOverload<const QString &>::of(&QComboBox::currentTextChanged), this, [=] (QString text) {
-        qDebug() << text;
-    });*/
-    connect(ui->cbox_paths, &QComboBox::currentTextChanged, this, [=] () {
-        initSummonerInfo();
-    });
-    // refresh progress path
-    connect(ui->btn_refresh, &QPushButton::clicked, this, &MainWindow::onRefresh);
-    onRefresh();
-
-    initSummonerInfo();
-
-    m_lockfileReader = new LockFileReader;
-    m_lobbyManager = new LobbyManager;
-    connect(m_lobbyManager, &LobbyManager::result, this, &MainWindow::onResult);
-    connect(m_lobbyManager, &LobbyManager::summonerInfo, this, &MainWindow::onSummonerInfo);
+    init();
 }
 
 MainWindow::~MainWindow()
 {
+    delete m_httpsManager;
     delete ui;
 }
 
-void MainWindow::onRefresh()
+void MainWindow::selectGamePath()
 {
-    ui->cbox_paths->clear();
-    auto pathList = GetProcessFullPaths("LeagueClient.exe");
-    ui->cbox_paths->addItems(pathList);
-}
-
-void MainWindow::onResult(const QString &result)
-{
-    ui->textEdit_result->setPlainText(result);
-}
-
-void MainWindow::onSummonerInfo(const SummonerInfo &info)
-{
-    m_summonerInfo = info;
-    if (info.name.isEmpty()) {
-        m_summonerInfo.name = "未知";
-        m_summonerInfo.level = 0;
-        m_summonerInfo.xp = 0;
-        m_summonerInfo.nextXp = 0;
-        QMessageBox::critical(this, "错误!", "未能获取到正确的召唤师信息，请联系作者！");
+    QString gamePath;
+    QPointer<QFileDialog> dialog(new QFileDialog(this));
+    dialog->setWindowTitle(QString("Select %1").arg(ProcessName));
+    dialog->setDirectory(qApp->applicationDirPath());
+    dialog->setNameFilter(QString("%1 (%1)").arg(ProcessName));
+    dialog->setViewMode(QFileDialog::Detail);
+    if (dialog->exec() == QDialog::Accepted) {
+        gamePath = dialog->selectedFiles().first();
+        gamePath.remove(ProcessName);
+        ui->edit_path->setText(gamePath);
     }
-    ui->lbl_name->setText(m_summonerInfo.name);
-    ui->lbl_level->setText(QString::number(m_summonerInfo.level));
-    ui->lbl_xp->setText(QString("%1 / %2").arg(m_summonerInfo.xp).arg(m_summonerInfo.nextXp));
 }
 
-void MainWindow::showAboutDialog()
+void MainWindow::getGamePath()
 {
-#if 0
-    QMessageBox::about(nullptr, "声明",
-                       QString("<p>"
-                               "<center style=\"font-size:26px;color:gray\">League Lobby</span>"
-                               "<span style=\"color:#ffff00\"> %1</span><br/><br/>"
-                               "<span style=\"font-size:17px\">此软件为英雄联盟自定义房间工具.</span><br/>"
-                               "<span style=\"font-size:17px\">此软件的开发完全遵循Riot开发者协议.</span><br/>"
-                               "<span style=\"font-size:17px\">所实现的效果皆为调用Riot League of Legends开放API.</span><br/>"
-                               "<span style=\"font-size:17px\">此软件</span><span style=\"font-size:20px;color:red\">不对游戏进行任何修改(内存、文件等)</span>.<br/>"
-                               "<span style=\"font-size:17px\">此软件</span><span style=\"font-size:20px;color:red\">仅供学习，严禁出售！</span><br/>"
-                               "<span style=\"font-size:17px\">如有任何问题请联系作者.</span><br/>"
-                               "<span style=\"font-size:17px\">Bilibili UID:14671179.</span><br/>"
-                               "<span style=\"font-size:17px\">LeagueLobby软件交流群 %2 <a href=\"https://shang.qq.com/wpa/qunwpa?idkey=cf65f617e3c15b5f6f075e76fe3c8ba62e2ab92ba940697f0810e8063f0031a9\">点击加入</a></span><br/>"
-                               "<span style=\"font-size:17px\"> 测试人员: 蓝色奇诺比奥.</span><br/>"
-                               "<span style=\"font-size:17px\"> 作者: Mario.</span>"
-                               "</p>").arg(LeagueLobbyVersion).arg(QQGroupId));
-#endif
-    QMessageBox::about(nullptr, "声明",
-        QString("<p>"
-            "<span style=\"font-size:26px;\">League Lobby</span>"
-            "<span style=\"font-size:17px;\"> 英雄联盟自定义房间工具</span>"
-            "<span > %1</span><br/><br/>"
-            "<center style=\"font-size:17px\">此软件的开发完全遵循Riot开发者协议.</center>"
-            "<center style=\"font-size:17px\">不修改游戏的任何文件或内存.</center>"
-            "<center style=\"font-size:17px\">所有效果皆为调用Riot League of Legends开放API实现.</center><br/>"
-            "<b style=\"font-size:18px;color:#ffff00\">此软件仅供学习交流使用，严禁用于任何商业用途！</b><br/><br/>"
-            "<span style=\"font-size:17px\">如有任何问题请联系作者 Mario.</span><br/>"
-            "<span style=\"font-size:17px\">哔哩哔哩 UID:14671179 <a href=\"https://space.bilibili.com/14671179\">点击加入</a>.</span><br/>"
-            "<span style=\"font-size:17px\">交流QQ群 %2 <a href=\"https://shang.qq.com/wpa/qunwpa?idkey=cf65f617e3c15b5f6f075e76fe3c8ba62e2ab92ba940697f0810e8063f0031a9\">点击加入</a></span><br/>"
-            "<span style=\"font-size:17px\">感谢测试人员: 蓝色奇诺比奥(小蓝).</span><br/>"
-            "</p>").arg(LeagueLobbyVersion).arg(QQGroupId));
-}
-
-void MainWindow::on_btn_getSummonerInfo_clicked()
-{
-    QString path;
-    if (ui->rbtn_getPath_manual->isChecked()) {
-        path = ui->lineEdit_path->text();
-    }
-
-    if (ui->rbtn_getPath_auto->isChecked()) {
-        path = ui->cbox_paths->currentText();
-    }
-
-
-    if (path.isEmpty()) {
-        QMessageBox::warning(this, "警告!", "请先开启游戏再获取召唤师信息！");
+    auto gamePath = GameInfo::getGamePath();
+    if (gamePath.isEmpty()) {
+        QMessageBox::warning(this, "Failed!", "Can't get game path!");
         return;
     }
-    path = path.left(path.length() - QString("/LeagueClient.exe").length());
-    if (m_lockfileReader->setGamePath(path)) {
-        m_lobbyManager->setLoginKey(m_lockfileReader->getPort(), m_lockfileReader->getToken());
-    }
-    m_lobbyManager->getSummonerInfo();
+    ui->edit_path->setText(gamePath);
 }
 
-void MainWindow::on_btn_createFromJson_clicked()
+QString MainWindow::getLobbyUrl()
 {
-    if (!checkSummonerID()) {
-        return;
+    QString url;
+    auto gamePath = ui->edit_path->text();
+    if (gamePath.isEmpty()) {
+        QMessageBox::warning(this, "Failed!", "Please set game path!");
+        return url;
     }
 
-    m_lobbyManager->createLobbyFromJson(ui->textEdit_json->toPlainText());
+    auto lockfile = GameInfo::getLockFile(gamePath);
+    if (lockfile.port.isEmpty() || lockfile.token.isEmpty()) {
+        QMessageBox::warning(this, "Failed!", "Can't read lockfile!");
+        return url;
+    }
+
+    url = LobbyUrl.arg(lockfile.token).arg(lockfile.port);
+    return url;
 }
 
-void MainWindow::on_btn_createFromQueueId_clicked()
+void MainWindow::createPracticetool()
 {
-    if (!checkSummonerID()) {
-        return;
-    }
-
-    quint16 id = static_cast<quint16>(ui->sbox_queueId->value());
-    m_lobbyManager->createLobbyFromQueueId(id);
-
-    switch (ui->cbox_increment->currentIndex()) {
-    case 1:
-        ui->sbox_queueId->setValue(id + 1);
-        break;
-    case 2:
-        ui->sbox_queueId->setValue(id + 10);
-        break;
-    default:
-        break;
-    }
-    ui->lbl_currentId->setText(QString::number(id));
+    auto lobbyUrl = getLobbyUrl();
+    if (!lobbyUrl.isEmpty())
+        m_httpsManager->post(lobbyUrl, JsonPracticetool.arg(qrand() % 65535).simplified());
 }
 
-void MainWindow::on_btn_create5V5Tutorial_clicked()
+void MainWindow::createFromQueueId()
 {
-    if (!checkSummonerID()) {
-        return;
-    }
-
-    qsrand(time(NULL));
-    int n = qrand() % 65535;
-    QString name = QString("Mario LeagueLobby 5V5 PRACTICETOOL-%1").arg(n);
-    m_lobbyManager->create5V5Practice(name);
+    auto lobbyUrl = getLobbyUrl();
+    if (!lobbyUrl.isEmpty())
+        m_httpsManager->post(lobbyUrl, JsonQueueId.arg(ui->edit_queueId->text()));
 }
 
-void MainWindow::initSummonerInfo()
+void MainWindow::init()
 {
-    m_summonerInfo.name = "未知";
-    onSummonerInfo(m_summonerInfo);
+    // MainWindow
+    setFixedSize(width(), height());
+    setWindowTitle("League Lobby");
+
+    // Stylesheet
+    this->setStyleSheet(WidgetStyleSheet + ButtonStyleSheet +
+                        LineEditStyleSheet + ToolTipStyleSheet);
+    ui->btn_help_practicetool->setStyleSheet(HelpStyleSheet);
+    ui->btn_help_queueId->setStyleSheet(HelpStyleSheet);
+    ui->btn_refresh->setStyleSheet(RefreshStyleSheet);
+
+    // Shadow
+    ui->btn_select->setGraphicsEffect(createShadow());
+    ui->btn_refresh->setGraphicsEffect(createShadow());
+    ui->btn_create_practicetool->setGraphicsEffect(createShadow());
+    ui->btn_create_queueId->setGraphicsEffect(createShadow());
+    ui->btn_help_practicetool->setGraphicsEffect(createShadow());
+    ui->btn_help_queueId->setGraphicsEffect(createShadow());
+    ui->edit_path->setGraphicsEffect(createShadow());
+    ui->edit_queueId->setGraphicsEffect(createShadow());
+
+    // ToolTip
+    ui->btn_help_practicetool->setToolTip("Create 5v5 practicetool.\nClick to view details.");
+    ui->btn_help_queueId->setToolTip("Create lobby from queueId.\nClick to view details.");
+
+    // Title
+    ui->btn_select->setText("...");
+    ui->btn_create_practicetool->setText("Create 5v5 practicetool");
+    ui->btn_create_queueId->setText("Create");
+    ui->label_source_link->setText("<a style='color: green;' href = github.com>github.com/MarioCrane</a>");
+
+    // Edit
+    ui->edit_path->setPlaceholderText(QString("%1 Path").arg(ProcessName));
+    ui->edit_path->setReadOnly(true);
+    ui->edit_queueId->setText("1091");
+    ui->edit_queueId->setValidator(new QRegExpValidator(QRegExp("[0-9]+$")));
+
+    // Slots
+    connect(ui->btn_help_practicetool, &QPushButton::clicked, this, [=] () {
+        auto lobbyUrl = getLobbyUrl();
+        if (!lobbyUrl.isEmpty())
+            m_helpWidget->showHelp(getLobbyUrl(), "post\n" + JsonPracticetool.arg(qrand() % 65535));
+    });
+    connect(ui->btn_help_queueId, &QPushButton::clicked, this, [=] () {
+        auto lobbyUrl = getLobbyUrl();
+        if (!lobbyUrl.isEmpty())
+            m_helpWidget->showHelp(getLobbyUrl(), "post\n" + JsonQueueId.arg(ui->edit_queueId->text()));
+    });
+
+    connect(ui->btn_select, &QPushButton::clicked, this, &MainWindow::selectGamePath);
+    connect(ui->btn_refresh, &QPushButton::clicked, this, &MainWindow::getGamePath);
+    connect(ui->btn_create_practicetool, &QPushButton::clicked, this, &MainWindow::createPracticetool);
+    connect(ui->btn_create_queueId, &QPushButton::clicked, this, &MainWindow::createFromQueueId);
+
+    connect(ui->label_source_link, &QLabel::linkActivated, this, [=] () {
+        QDesktopServices::openUrl(QUrl("https://github.com/MarioCrane/LeaueLobby"));
+    });
 }
 
-bool MainWindow::checkSummonerID()
+QGraphicsDropShadowEffect *MainWindow::createShadow()
 {
-    if (m_summonerInfo.id == 0) {
-        QMessageBox::warning(this, "警告!", "请先获取召唤师信息在进行创建！");
-        return false;
-    }
-    return true;
-}
-
-void MainWindow::showQueuesWidget()
-{
-    ui->widget_queues->setFixedWidth(200);
-
-    QList<QueuesPair> normalQueuesPairs;
-    normalQueuesPairs.append(QueuesPair("匹配模式 征召", 400));
-    normalQueuesPairs.append(QueuesPair("匹配模式 自选", 420));
-    normalQueuesPairs.append(QueuesPair("排位赛 单排/双排", 430));
-    normalQueuesPairs.append(QueuesPair("排位赛 灵活排位", 440));
-    normalQueuesPairs.append(QueuesPair("极地大乱斗", 450));
-    normalQueuesPairs.append(QueuesPair("冠军杯赛 征召", 700));
-    normalQueuesPairs.append(QueuesPair("人机 入门", 830));
-    normalQueuesPairs.append(QueuesPair("人机 新手", 840));
-    normalQueuesPairs.append(QueuesPair("人机 一般", 850));
-    normalQueuesPairs.append(QueuesPair("云顶之弈 匹配", 1090));
-    normalQueuesPairs.append(QueuesPair("云顶之弈 排位", 1100));
-    normalQueuesPairs.append(QueuesPair("云顶之弈 教学", 1110));
-    normalQueuesPairs.append(QueuesPair("新手教程 一", 2000));
-    normalQueuesPairs.append(QueuesPair("新手教程 二", 2010));
-    normalQueuesPairs.append(QueuesPair("新手教程 三", 2020));
-
-    QList<QueuesPair> specialQueuesPairs;
-    specialQueuesPairs.append(QueuesPair("红月决", 600));
-    specialQueuesPairs.append(QueuesPair("暗星", 610));
-    specialQueuesPairs.append(QueuesPair("极地大乱斗 人机", 860));
-    specialQueuesPairs.append(QueuesPair("无限火力", 900));
-    specialQueuesPairs.append(QueuesPair("飞升争夺战", 910));
-    specialQueuesPairs.append(QueuesPair("魄罗大乱斗", 920));
-    specialQueuesPairs.append(QueuesPair("极地大乱斗 召唤师峡谷", 930));
-    specialQueuesPairs.append(QueuesPair("怪兽入侵 狂袭", 990));
-    specialQueuesPairs.append(QueuesPair("超频行动", 1000));
-    specialQueuesPairs.append(QueuesPair("冰雪无限火力", 1010));
-    specialQueuesPairs.append(QueuesPair("克隆大乱斗", 1020));
-    specialQueuesPairs.append(QueuesPair("奥德赛:淬炼 入门|一星", 1030));
-    specialQueuesPairs.append(QueuesPair("奥德赛:淬炼 学员|二星", 1040));
-    specialQueuesPairs.append(QueuesPair("奥德赛:淬炼 组员|三星", 1050));
-    specialQueuesPairs.append(QueuesPair("奥德赛:淬炼 船长|四星", 1060));
-    specialQueuesPairs.append(QueuesPair("奥德赛:淬炼 狂袭|五星", 1070));
-    specialQueuesPairs.append(QueuesPair("极限闪击", 1200));
-
-    QLabel *title, *secondTitle, *labelName, *labelId;
-    int index = 0;
-    QGridLayout *layout;
-    layout = new QGridLayout;
-
-    // Normal
-    title = new QLabel("普通模式");
-    title->setAlignment(Qt::AlignCenter);
-    title->setStyleSheet("background-color: rgb(76,76,76);");
-
-    secondTitle = new QLabel("ID");
-    secondTitle->setAlignment(Qt::AlignCenter);
-    secondTitle->setStyleSheet("background-color: rgb(76,76,76);");
-
-    layout->addWidget(title, index, 0);
-    layout->addWidget(secondTitle, index++, 1);
-
-    foreach (auto pair, normalQueuesPairs) {
-        labelName = new QLabel(pair.first);
-        labelId = new QLabel(QString::number(pair.second));
-        layout->addWidget(labelName, index, 0);
-        layout->addWidget(labelId, index, 1);
-        index++;
-        //qDebug() << pair.first << pair.second;
-    }
-
-    // Special
-    title = new QLabel("轮换游戏模式");
-    title->setAlignment(Qt::AlignCenter);
-    title->setStyleSheet("background-color: rgb(76,76,76);");
-
-    secondTitle = new QLabel("ID");
-    secondTitle->setAlignment(Qt::AlignCenter);
-    secondTitle->setStyleSheet("background-color: rgb(76,76,76);");
-
-    layout->addWidget(title, index, 0);
-    layout->addWidget(secondTitle, index++, 1);
-
-    foreach (auto pair, specialQueuesPairs) {
-        labelName = new QLabel(pair.first);
-        labelId = new QLabel(QString::number(pair.second));
-        layout->addWidget(labelName, index, 0);
-        layout->addWidget(labelId, index, 1);
-        index++;
-        //qDebug() << pair.first << pair.second;
-    }
-
-    ui->widget_queues->setLayout(layout);
-    //ui->widget_queues->setVisible(true);
+    QPointer<QGraphicsDropShadowEffect> shadow(new QGraphicsDropShadowEffect);
+    shadow->setBlurRadius(15);
+    shadow->setOffset(1);
+    shadow->setColor(Qt::gray);
+    return shadow.data();
 }
